@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: phantom
+# key: p
+# --
+\phantom{$1}$0

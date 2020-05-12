@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: questionlist
+# key: qlist
+# --
+\pgfmathdeclarelist{${1:qlist}}{
+{${2:directory}/${3:question}}
+}
+
+\pgfmathgetlistlength{\l}{$1}
+
+%Shuffle
+\pgfmathknuthshuffle{$1}
+%end options
+
+%Print
+\foreach \i in {1,...,\l}{
+	\pgfmathgetlistitem{\x}{$1}{\i}
+        \typeout{\x}%%
+	\input{\x}
+        \ifthenelse{\i = 3}{\newpage}{}
+}

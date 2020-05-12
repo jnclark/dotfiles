@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: questiondescription
+# key: ds
+# --
+\ifdefined\isdraft [${1:Description}]\else\relax\fi

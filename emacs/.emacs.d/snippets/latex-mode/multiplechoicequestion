@@ -1,0 +1,28 @@
+# -*- mode: snippet -*-
+# name: multiplechoicequestion
+# key: mcq
+# --
+\question[${8:4}] ${1:Body}
+\ifdefined\isdraft ${7:Description}\else\relax\fi
+\pgfmathdeclarelist{anslist}{
+{
+	${2:Correct}
+	\ifdefined\KEY\\(\triangleleft\\)\else\relax\fi
+}
+{${3:Wrong}}
+{${4:Wrong}}
+{${5:Wrong}}
+}
+\pgfmathgetlistlength{\l}{anslist}
+
+\pgfmathknuthshuffle{anslist}
+
+\begin{choices}
+\foreach \i in {1,...,\l}{
+	\pgfmathgetlistitem{\x}{anslist}{\i}
+	\typeout{yo, \x}
+	\choice \x
+      }
+      \choice ${6:None of the above.}
+\end{choices}
+\elasticvfill

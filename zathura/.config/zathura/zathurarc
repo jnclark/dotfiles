@@ -1,0 +1,44 @@
+# Set interface colors, inspired by Tassilo Horn's tsdh-dark theme #
+# and some of my other interface settings. #
+set font "monospace regular 11"
+set default-bg		    "#333333"
+set default-fg 	  	    "#f5f5f5"
+set statusbar-bg    	    "#4d4d4d"
+set statusbar-fg     	    "#f5f5f5"
+set inputbar-bg     	    "#ffff00"
+set inputbar-fg     	    "#0000cd"
+set notification-bg         "#00688b"
+set notification-fg 	    "#f5f5f5"
+set notification-error-bg   "#cd5c5c"
+set notification-error-fg   "#8b0000"
+set notification-warning-bg "#ffb6c1"
+set notification-warning-fg "#8b0000"
+set highlight-color 	    "#8fbc8f"
+set highlight-active-color  "#2e8b57"
+set completion-highlight-fg "#f5f5f5"
+set completion-highlight-bg "#228b22"
+set completion-bg           "#333333"
+set completion-fg 	    "#f5f5f5"
+
+# copy to system clipboard #
+set selection-clipboard clipboard
+
+# collapse home path into ~ #
+set statusbar-home-tilde true
+
+# incremental search #
+set incremental-search true
+
+# synctex available from zathura, without being called from editor
+set synctex true
+set synctex-editor-command "emacsclient +%{line} %{input}"
+
+# options to recolor pdf #
+# on by default is #
+# disabled, due to making glyphs pixelate, #
+# and pdf render slowly #
+set recolor-lightcolor     "#333333"
+set recolor-darkcolor      "#f5f5f5"
+# set recolor true
+# keep inherent pdf colors #
+set recolor-keephue true

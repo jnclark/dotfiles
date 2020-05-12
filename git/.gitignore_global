@@ -1,0 +1,10 @@
+# LaTeX
+## Ignore auxiliary files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+## Ignore output files
+*.pdf

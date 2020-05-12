@@ -1,0 +1,8 @@
+# Use separate file for username / github token / etc
+[include]
+    path = ~/.gitconfig.local
+
+# Use following editor for git, and use a global ignore file
+[core]
+    editor = emacsclient
+    excludesfile = ~/.gitignore_global
