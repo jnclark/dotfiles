@@ -15,7 +15,9 @@ To install, use GNU Stow.
 This configuration is minimal, attempting to only utilize ELPA packages available via package managers in many GNU/Linux distributions.
 
 ### The packages needed are:
-- 
+- AUCTeX (auctex)
+- YASnippet (elpa-yasnippet, elpa-yasnippet-snippets) 
+- Org (elpa-org)
 
 ### A note on `.gitconfig`
 To use this git configuration, you also need the file `.gitconfig.local` with the file contents
