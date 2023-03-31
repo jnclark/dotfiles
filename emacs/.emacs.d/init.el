@@ -6,6 +6,14 @@
 (load-theme 'tsdh-dark t) ;;starter theme
 (global-hl-line-mode 1) ;; highlights the current line.
 
+;; set up saves to a central location for auto saves to not litter the
+;; file tree
+(setq auto-save-file-name-transforms
+      '((".*" "~/.emacs.d/saves/\\1" t)))
+(setq backup-directory-alist '((".*" . "~/.emacs.d/saves/")))
+(add-to-list 'backup-directory-alist
+             (cons tramp-file-name-regexp nil))
+
 (server-start) ;;for synctex and emacsclient
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -109,6 +117,34 @@
 ;; end LaTeX
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
+;;   C/C++ settings   ;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq c-default-style
+      '((awk-mode . "awk")
+        (other . "linux")))
+
+(add-hook 'c++-mode-hook
+          '(lambda () 
+             (setq-default indent-tabs-mode nil)
+             (setq c-basic-indent 4)
+             (setq tab-width 4)))
+
+
+;; end C/C++
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;;  Python settings  ;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
+;; elpy (using default env/nix shell env)
+(setq elpy-rpc-python-command "python")
+(setq elpy-rpc-virtualenv-path 'global)
+(setq python-shell-interpreter "python")
+
+;; end Python
+
+;;;;;;;;;;;;;;;;;;;;;;;;
 ;; yasnippet settings ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -131,6 +167,23 @@
 (setq-default electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit)
 
 ;; end delimiter settings
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;; org mode settings ;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((calc . t)
+   (sed . t)
+   (shell . t)
+   (eshell . t)
+   (C . t)
+   (python . t)
+   (haskell . t)
+   (sql . t)
+   (sqlite . t)))
+
 
 ;;;;;;;;;;;;;;;;;;;;
 ;; Custom Keymaps ;;
