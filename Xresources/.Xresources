@@ -1,0 +1,4 @@
+!! Sxiv appearance
+Sxiv.background: #f5f5f5
+Sxiv.foreground: #4d4d4d
+Sxiv.font: "monospace regular 11"
